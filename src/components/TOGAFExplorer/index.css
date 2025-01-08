@@ -1,0 +1,105 @@
+.explorer-container {
+    height: 100vh;
+    display: flex;
+    position: relative;
+}
+
+.canvas-container {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 16px;
+    background: white;
+}
+
+/* SVG Elements */
+.node {
+    cursor: pointer;
+    stroke: #333;
+    stroke-width: 1;
+    transition: filter 0.2s ease;
+}
+
+.node:hover {
+    filter: brightness(95%);
+}
+
+.node.root {
+    fill: #e8f5e9;
+}
+
+.node.phase {
+    fill: #e3f2fd;
+}
+
+.node.deliverable {
+    fill: #fff3e0;
+}
+
+.node-text {
+    font-size: 12px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    pointer-events: none;
+    user-select: none;
+}
+
+.connector {
+    fill: none;
+    stroke: #666;
+    stroke-width: 1.5;
+}
+
+/* Info Panel */
+.info-panel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 400px;
+    height: 100vh;
+    background: white;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-header {
+    padding: 20px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 8px;
+}
+
+.info-content {
+    padding: 20px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.markdown-content {
+    line-height: 1.6;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    color: #666;
+}
